@@ -1,0 +1,15 @@
+plugins {
+    id 'base'
+}
+
+task copy(type: Copy) {
+    from 'src'
+    into 'dest'
+}
+
+task zip(type: Zip) {
+    from 'src'
+}
+
+description = 'A trivial Gradle build'
+version = '1.0'
