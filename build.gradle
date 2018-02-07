@@ -1,5 +1,7 @@
 plugins {
     id 'base'
+    id 'java'
+    id 'application'
 }
 
 task copy(type: Copy) {
@@ -13,3 +15,17 @@ task zip(type: Zip) {
 
 description = 'A trivial Gradle build'
 version = '1.0'
+
+mainClassName = 'App'
+
+dependencies {
+    // This dependency is found on compile classpath of this component and consumers.
+    compile 'com.google.guava:guava:23.0'
+
+    // Use JUnit test framework
+    testCompile 'junit:junit:4.12'
+}
+
+repositories {
+    jcenter()
+}
